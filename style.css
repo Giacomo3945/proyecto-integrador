@@ -1,0 +1,346 @@
+/* ============================================================
+   PARTE DE [TU NOMBRE]
+   Incluye: Variables CSS, Box Model, Diseño visual
+   (tipografías, colores, espaciados, bordes, sombras) y unidades.
+   NO incluye: Flexbox, Grid, Media Queries (los agrega mi compañero)
+   ============================================================ */
+
+/* ===== VARIABLES CSS ===== */
+:root {
+  /* Colores */
+  --color-primario: #c0392b;      /* rojo institucional / alerta */
+  --color-secundario: #2980b9;    /* azul de acción */
+  --color-fondo: #f4f4f4;
+  --color-fondo-alt: #ecf0f1;
+  --color-fondo-oscuro: #2c3e50;
+  --color-card-oscura: #34495e;
+  --color-texto: #333333;
+  --color-texto-claro: #bdc3c7;
+  --color-blanco: #ffffff;
+  --color-exito: #27ae60;
+  --color-alerta: #f39c12;
+  --color-info: #3498db;
+
+  /* Tipografía */
+  --fuente-principal: 'Segoe UI', Roboto, Arial, sans-serif;
+  --tam-texto-base: 1rem;
+  --tam-titulo-h1: 2rem;
+  --tam-titulo-h2: 1.75rem;
+  --tam-titulo-h3: 1.15rem;
+
+  /* Espaciados */
+  --espaciado-xs: 0.5rem;
+  --espaciado-sm: 1rem;
+  --espaciado-md: 1.5rem;
+  --espaciado-lg: 2.5rem;
+
+  /* Bordes y sombras */
+  --radio-borde: 8px;
+  --borde-suave: 1px solid #dcdcdc;
+  --sombra-suave: 0 2px 5px rgba(0, 0, 0, 0.15);
+  --sombra-fuerte: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== RESET Y BOX MODEL GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== ESTILOS GENERALES DEL BODY ===== */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  font-size: var(--tam-texto-base);
+}
+
+/* ===== CONTENEDOR GENERAL ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaciado-sm);
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: var(--espaciado-md) 0;
+  box-shadow: var(--sombra-suave);
+}
+
+header h1 {
+  font-size: var(--tam-titulo-h1);
+  margin-bottom: var(--espaciado-xs);
+}
+
+/* ===== NAVEGACIÓN (solo tipografía/color, el layout lo hace mi compañero) ===== */
+nav ul li a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: var(--espaciado-xs);
+  border-radius: var(--radio-borde);
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== HERO / INICIO ===== */
+.hero {
+  background-color: var(--color-fondo-alt);
+  padding: var(--espaciado-lg) 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: var(--tam-titulo-h2);
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-sm);
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto var(--espaciado-md) auto;
+  color: var(--color-texto);
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.section {
+  padding: var(--espaciado-lg) 0;
+  border-bottom: var(--borde-suave);
+}
+
+.section-alt {
+  background-color: var(--color-fondo-alt);
+}
+
+.section h2 {
+  font-size: var(--tam-titulo-h2);
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-md);
+  padding-bottom: var(--espaciado-xs);
+  border-bottom: 3px solid var(--color-primario);
+  display: inline-block;
+}
+
+/* ===== SECCIÓN OSCURA (Estadísticas) ===== */
+.section-oscura {
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-blanco);
+}
+
+.titulo-oscuro {
+  color: var(--color-primario);
+  border-bottom-color: var(--color-primario);
+}
+
+/* ===== TARJETAS (card) — solo diseño, sin layout ===== */
+.card {
+  background-color: var(--color-blanco);
+  border: var(--borde-suave);
+  border-radius: var(--radio-borde);
+  padding: var(--espaciado-md);
+  box-shadow: var(--sombra-suave);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--sombra-fuerte);
+}
+
+.card .icon {
+  font-size: 2rem;
+}
+
+.card h3 {
+  font-size: var(--tam-titulo-h3);
+  margin: var(--espaciado-xs) 0;
+  color: var(--color-texto);
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Tarjetas dentro de sección oscura */
+.section-oscura .card,
+.estadistica-item {
+  background-color: var(--color-card-oscura);
+  color: var(--color-blanco);
+  border: none;
+}
+
+/* ===== BADGES / ETIQUETAS DE ESTADO ===== */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--color-blanco);
+  background-color: var(--color-secundario);
+  margin-top: var(--espaciado-xs);
+}
+
+.badge-pendiente {
+  background-color: var(--color-alerta);
+}
+
+.badge-proceso {
+  background-color: var(--color-info);
+}
+
+.badge-atendida {
+  background-color: var(--color-exito);
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radio-borde);
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1a6a8a;
+}
+
+.btn-alerta {
+  background-color: var(--color-primario);
+}
+
+.btn-alerta:hover {
+  background-color: #922b21;
+}
+
+.btn-enviar {
+  background-color: var(--color-primario);
+  padding: 0.85rem 2rem;
+}
+
+.ver-mas {
+  margin-top: var(--espaciado-md);
+  text-align: center;
+}
+
+/* ===== FORMULARIOS ===== */
+.formulario {
+  background-color: var(--color-blanco);
+  border: var(--borde-suave);
+  border-radius: var(--radio-borde);
+  padding: var(--espaciado-md);
+  box-shadow: var(--sombra-suave);
+}
+
+.titulo-form {
+  color: var(--color-primario);
+  margin-bottom: var(--espaciado-sm);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: var(--espaciado-sm);
+  margin-bottom: 0.25rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: var(--borde-suave);
+  border-radius: var(--radio-borde);
+  font-family: var(--fuente-principal);
+  font-size: 0.95rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+button[type="submit"] {
+  margin-top: var(--espaciado-md);
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radio-borde);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.solicitudes-recientes {
+  margin-top: var(--espaciado-lg);
+}
+
+/* ===== ESTADÍSTICAS (números) ===== */
+.estadistica-item {
+  padding: var(--espaciado-md);
+  border-radius: var(--radio-borde);
+  text-align: center;
+}
+
+.estadistica-item .numero {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+.estadistica-item .label {
+  font-size: 0.85rem;
+  color: var(--color-texto-claro);
+  margin-top: var(--espaciado-xs);
+}
+
+/* ===== AVISO DE EMERGENCIA ===== */
+.aviso-emergencia {
+  margin-top: var(--espaciado-md);
+}
+
+.aviso-texto {
+  background-color: var(--color-alerta);
+  color: var(--color-blanco);
+  padding: var(--espaciado-sm);
+  border-radius: var(--radio-borde);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: var(--espaciado-md) 0;
+}
+
+footer p {
+  margin-bottom: var(--espaciado-xs);
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-blanco);
+}
