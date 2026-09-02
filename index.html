@@ -3,57 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Integrador</title>
+    <title>Sistema de Gestión de Emergencias Comunitarias</title>
+    <style>
+        /* Estilos básicos para mejor visualización */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #c0392b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header h1 {
+            font-size: 28px;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        header nav ul li a:hover {
+            background: #a93226;
+        }
+        .hero {
+            background: #e74c3c;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #c0392b;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 50px 0;
+        }
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #c0392b;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 10px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .card h3 {
+            color: #c0392b;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .card .icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .card .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .estadisticas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .estadistica-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .estadistica-item .numero {
+            font-size: 36px;
+            font-weight: bold;
+            color: #c0392b;
+        }
+        .estadistica-item .label {
+            color: #666;
+            margin-top: 5px;
+        }
+        .formulario {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+        .formulario label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        .formulario input,
+        .formulario select,
+        .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .formulario textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .formulario button {
+            background: #c0392b;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .formulario button:hover {
+            background: #a93226;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        .alerta {
+            background: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+            }
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
     <header>
-        <h1>Mi Proyecto</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>🚨 S.G.E.C.</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#emergencias">Emergencias</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#refugios">Refugios</a></li>
+                    <li><a href="#voluntarios">Voluntarios</a></li>
+                    <li><a href="#solicitudes">Solicitudes</a></li>
+                    <li><a href="#estadisticas">Estadísticas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Bienvenidos</h2>
-            <p>Esta es la estructura inicial de nuestro sitio web.</p>
-        </section>
+    <!-- ==================== HERO / INICIO ==================== -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>🌊 Sistema de Gestión y Coordinación ante Emergencias</h2>
+            <p>Centralizá, organizá y coordiná la asistencia en situaciones de emergencia: inundaciones, incendios, evacuaciones, temporales y más.</p>
+            <a href="#solicitudes" class="btn">Reportar una emergencia</a>
+        </div>
+    </section>
 
-        <section id="servicios">
-            <h2>Nuestros Servicios</h2>
-            <article>
-                <h3>Servicio 1</h3>
-                <p>Descripción del servicio 1.</p>
-            </article>
-            <article>
-                <h3>Servicio 2</h3>
-                <p>Descripción del servicio 2.</p>
-            </article>
-        </section>
+    <!-- ==================== EMERGENCIAS ACTIVAS ==================== -->
+    <section id="emergencias" class="section">
+        <div class="container">
+            <h2>🚨 Emergencias Activas</h2>
+            <div class="cards">
+                <div class="card">
+                    <span class="icon">🌊</span>
+                    <h3>Inundación - Barrio Norte</h3>
+                    <p><strong>Gravedad:</strong> Alta</p>
+                    <p><strong>Estado:</strong> En proceso</p>
+                    <p><strong>Fecha:</strong> 02/09/2026</p>
+                    <p><strong>Afectados:</strong> ~120 personas</p>
+                    <span class="badge">Urgente</span>
+                </div>
+                <div class="card">
+                    <span class="icon">🔥</span>
+                    <h3>Incendio - Zona Rural</h3>
+                    <p><strong>Gravedad:</strong> Media</p>
+                    <p><strong>Estado:</strong> Monitoreo</p>
+                    <p><strong>Fecha:</strong> 01/09/2026</p>
+                    <p><strong>Afectados:</strong> ~45 personas</p>
+                    <span class="badge">En curso</span>
+                </div>
+                <div class="card">
+                    <span class="icon">⛈️</span>
+                    <h3>Temporal - Costa Este</h3>
+                    <p><strong>Gravedad:</strong> Baja</p>
+                    <p><strong>Estado:</strong> Resuelto</p>
+                    <p><strong>Fecha:</strong> 30/08/2026</p>
+                    <p><strong>Afectados:</strong> ~30 personas</p>
+                    <span class="badge">Finalizado</span>
+                </div>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" class="btn" style="background:#c0392b; color:white;">Ver todas las emergencias</a>
+            </div>
+        </div>
+    </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <br>
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
-                <br>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+    <!-- ==================== RECURSOS ==================== -->
+    <section id="recursos" class="section" style="background:#ecf0f1;">
+        <div class="container">
+            <h2>📦 Recursos Disponibles</h2>
+            <div class="cards">
+                <div class="card">
+                    <span class="icon">🍞</span>
+                    <h3>Alimentos no perecederos</h3>
+                    <p><strong>Disponible:</strong> 850 kg</p>
+                    <p><strong>Distribuido:</strong> 320 kg</p>
+                    <p><strong>Estado:</strong> Suficiente</p>
+                </div>
+                <div class="card">
+                    <span class="icon">💧</span>
+                    <h3>Agua potable</h3>
+                    <p><strong>Disponible:</strong> 2,500 L</p>
+                    <p><strong>Distribuido:</strong> 1,100 L</p>
+                    <p><strong>Estado:</strong> Crítico</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🛏️</span>
+                    <h3>Frazadas y colchones</h3>
+                    <p><strong>Disponible:</strong> 320 unidades</p>
+                    <p><strong>Distribuido:</strong> 180 unidades</p>
+                    <p><strong>Estado:</strong> Suficiente</p>
+                </div>
+                <div class="card">
+                    <span class="icon">💊</span>
+                    <h3>Medicamentos básicos</h3>
+                    <p><strong>Disponible:</strong> 45 kits</p>
+                    <p><strong>Distribuido:</strong> 20 kits</p>
+                    <p><strong>Estado:</strong> Bajo</p>
+                </div>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" class="btn" style="background:#c0392b; color:white;">Gestionar recursos</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- ==================== REFUGIOS ==================== -->
+    <section id="refugios" class="section">
+        <div class="container">
+            <h2>🏠 Refugios Habilitados</h2>
+            <div class="cards">
+                <div class="card">
+                    <span class="icon">🏫</span>
+                    <h3>Escuela N° 15</h3>
+                    <p><strong>Capacidad:</strong> 150 personas</p>
+                    <p><strong>Alojados:</strong> 95 personas</p>
+                    <p><strong>Disponible:</strong> 55 lugares</p>
+                    <span class="badge">Activo</span>
+                </div>
+                <div class="card">
+                    <span class="icon">⛪</span>
+                    <h3>Centro Comunitario</h3>
+                    <p><strong>Capacidad:</strong> 80 personas</p>
+                    <p><strong>Alojados:</strong> 72 personas</p>
+                    <p><strong>Disponible:</strong> 8 lugares</p>
+                    <span class="badge">Casi lleno</span>
+                </div>
+                <div class="card">
+                    <span class="icon">🏟️</span>
+                    <h3>Polideportivo Municipal</h3>
+                    <p><strong>Capacidad:</strong> 200 personas</p>
+                    <p><strong>Alojados:</strong> 45 personas</p>
+                    <p><strong>Disponible:</strong> 155 lugares</p>
+                    <span class="badge">Disponible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VOLUNTARIOS ==================== -->
+    <section id="voluntarios" class="section" style="background:#ecf0f1;">
+        <div class="container">
+            <h2>👷 Voluntarios Registrados</h2>
+            <div class="cards">
+                <div class="card">
+                    <span class="icon">👨‍⚕️</span>
+                    <h3>Dr. Carlos Rodríguez</h3>
+                    <p><strong>Habilidad:</strong> Médico / Primeros auxilios</p>
+                    <p><strong>Disponibilidad:</strong> Turno tarde</p>
+                    <p><strong>Tarea asignada:</strong> Atención en refugio</p>
+                    <span class="badge">Activo</span>
+                </div>
+                <div class="card">
+                    <span class="icon">🧑‍🚒</span>
+                    <h3>Lucía Fernández</h3>
+                    <p><strong>Habilidad:</strong> Rescate / Logística</p>
+                    <p><strong>Disponibilidad:</strong> Turno noche</p>
+                    <p><strong>Tarea asignada:</strong> Coordinación en zona norte</p>
+                    <span class="badge">En terreno</span>
+                </div>
+                <div class="card">
+                    <span class="icon">🧑‍💻</span>
+                    <h3>Jorge Martínez</h3>
+                    <p><strong>Habilidad:</strong> Comunicación / RR.SS.</p>
+                    <p><strong>Disponibilidad:</strong> Full-time</p>
+                    <p><strong>Tarea asignada:</strong> Gestión de llamadas</p>
+                    <span class="badge">Disponible</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOLICITUDES DE ASISTENCIA ==================== -->
+    <section id="solicitudes" class="section">
+        <div class="container">
+            <h2>🆘 Solicitudes de Asistencia</h2>
+            
+            <!-- Formulario de solicitud -->
+            <div class="formulario">
+                <h3 style="color:#c0392b; margin-bottom:15px;">📝 Reportar nueva solicitud</h3>
+                <form>
+                    <label for="tipo-solicitud">Tipo de solicitud:</label>
+                    <select id="tipo-solicitud" name="tipo-solicitud">
+                        <option>Alimentos</option>
+                        <option>Agua</option>
+                        <option>Medicamentos</option>
+                        <option>Ropa / Abrigo</option>
+                        <option>Refugio / Alojamiento</option>
+                        <option>Asistencia médica</option>
+                        <option>Evacuación</option>
+                        <option>Otro</option>
+                    </select>
+
+                    <label for="ubicacion">Ubicación:</label>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Barrio, calle, referencia...">
+
+                    <label for="prioridad">Prioridad:</label>
+                    <select id="prioridad" name="prioridad">
+                        <option>Alta (Urgente)</option>
+                        <option>Media</option>
+                        <option>Baja</option>
+                    </select>
+
+                    <label for="descripcion">Descripción detallada:</label>
+                    <textarea id="descripcion" name="descripcion" placeholder="Describí la situación, cantidad de personas afectadas, necesidades específicas..."></textarea>
+
+                    <label for="contacto">Contacto (teléfono o email):</label>
+                    <input type="text" id="contacto" name="contacto" placeholder="Teléfono de contacto">
+
+                    <button type="submit">🚨 Enviar solicitud</button>
+                </form>
+            </div>
+
+            <!-- Listado de solicitudes -->
+            <div style="margin-top: 40px;">
+                <h3 style="color:#c0392b;">📋 Solicitudes recientes</h3>
+                <div class="cards" style="margin-top:20px;">
+                    <div class="card">
+                        <h3>🆘 Alimentos - Barrio Sur</h3>
+                        <p><strong>Prioridad:</strong> Alta</p>
+                        <p><strong>Estado:</strong> Pendiente</p>
+                        <p><strong>Contacto:</strong> 11-2345-6789</p>
+                        <span class="badge" style="background:#f39c12;">Pendiente</span>
+                    </div>
+                    <div class="card">
+                        <h3>🆘 Agua - Zona Norte</h3>
+                        <p><strong>Prioridad:</strong> Alta</p>
+                        <p><strong>Estado:</strong> En proceso</p>
+                        <p><strong>Contacto:</strong> 11-3456-7890</p>
+                        <span class="badge" style="background:#3498db;">En proceso</span>
+                    </div>
+                    <div class="card">
+                        <h3>🆘 Medicamentos - Villa Esperanza</h3>
+                        <p><strong>Prioridad:</strong> Media</p>
+                        <p><strong>Estado:</strong> Atendida</p>
+                        <p><strong>Contacto:</strong> 11-4567-8901</p>
+                        <span class="badge" style="background:#27ae60;">Atendida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ESTADÍSTICAS ==================== -->
+    <section id="estadisticas" class="section" style="background:#2c3e50; color:white;">
+        <div class="container">
+            <h2 style="color:#e74c3c; border-bottom-color:#e74c3c;">📊 Estadísticas del Sistema</h2>
+            <div class="estadisticas">
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">3</div>
+                    <div class="label" style="color:#bdc3c7;">Emergencias activas</div>
+                </div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">195</div>
+                    <div class="label" style="color:#bdc3c7;">Personas asistidas</div>
+                </div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">12</div>
+                    <div class="label" style="color:#bdc3c7;">Voluntarios activos</div>
+                </div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">218</div>
+                    <div class="label" style="color:#bdc3c7;">Lugares en refugios</div>
+                </div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">85%</div>
+                    <div class="label" style="color:#bdc3c7;">Solicitudes atendidas</div>
+                </div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">4</div>
+                    <div class="label" style="color:#bdc3c7;">Zonas afectadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2>📧 Contacto</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3 style="color:#c0392b;">📞 Atención 24/7</h3>
+                    <p><strong>Teléfono de emergencia:</strong> 0800-333-1234</p>
+                    <p><strong>Email:</strong> emergencias@proyecto.com</p>
+                    <p><strong>Dirección:</strong> Av. Principal 123, Centro</p>
+                    <div style="margin-top: 20px;">
+                        <p style="background:#f39c12; color:white; padding:10px; border-radius:5px;">
+                            ⚠️ <strong>En caso de emergencia grave, llamá al 911</strong>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color:#c0392b;">📩 Enviar consulta</h3>
+                    <form>
+                        <label for="nombre-contacto">Nombre:</label>
+                        <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="Tu nombre">
+
+                        <label for="email-contacto">Email:</label>
+                        <input type="email" id="email-contacto" name="email-contacto" placeholder="tu@email.com">
+
+                        <label for="mensaje-contacto">Mensaje:</label>
+                        <textarea id="mensaje-contacto" name="mensaje-contacto" placeholder="Escribí tu consulta..."></textarea>
+
+                        <button type="submit" style="background:#c0392b; color:white; padding:12px 30px; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer>
-        <p>&copy; 2026 - Proyecto Integrador </p>
+        <div class="container">
+            <p>🚨 <strong>Sistema de Gestión y Coordinación ante Emergencias Comunitarias</strong></p>
+            <p>© 2026 - Proyecto Integrador | Desarrollado para organizaciones comunitarias</p>
+            <p style="font-size:14px; color:#95a5a6; margin-top:10px;">
+                <a href="#inicio" style="color:#95a5a6; text-decoration:none;">Inicio</a> | 
+                <a href="#emergencias" style="color:#95a5a6; text-decoration:none;">Emergencias</a> | 
+                <a href="#recursos" style="color:#95a5a6; text-decoration:none;">Recursos</a> | 
+                <a href="#refugios" style="color:#95a5a6; text-decoration:none;">Refugios</a> | 
+                <a href="#voluntarios" style="color:#95a5a6; text-decoration:none;">Voluntarios</a> | 
+                <a href="#solicitudes" style="color:#95a5a6; text-decoration:none;">Solicitudes</a> | 
+                <a href="#estadisticas" style="color:#95a5a6; text-decoration:none;">Estadísticas</a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
