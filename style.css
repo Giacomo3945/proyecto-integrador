@@ -1,8 +1,7 @@
 /* ============================================================
-   PARTE DE [TU NOMBRE]
    Incluye: Variables CSS, Box Model, Diseño visual
    (tipografías, colores, espaciados, bordes, sombras) y unidades.
-   NO incluye: Flexbox, Grid, Media Queries (los agrega mi compañero)
+   NO incluye: Flexbox, Grid, Media Queries
    ============================================================ */
 
 /* ===== VARIABLES CSS ===== */
@@ -16,7 +15,7 @@
   --color-card-oscura: #34495e;
   --color-texto: #333333;
   --color-texto-claro: #bdc3c7;
-  --color-blanco: #ffffff;
+  --color-claro: #eeded0;
   --color-exito: #27ae60;
   --color-alerta: #f39c12;
   --color-info: #3498db;
@@ -78,7 +77,7 @@ header h1 {
   margin-bottom: var(--espaciado-xs);
 }
 
-/* ===== NAVEGACIÓN (solo tipografía/color, el layout lo hace mi compañero) ===== */
+/* ===== NAVEGACIÓN (solo tipografía/color) ===== */
 nav ul li a {
   color: var(--color-blanco);
   text-decoration: none;
