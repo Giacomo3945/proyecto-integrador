@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestión de Emergencias Comunitarias</title>
-    <link rel="stylesheet" href="style.css">      
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
     <header>
         <div class="container">
             <h1>🚨 S.G.E.C.</h1>
@@ -26,17 +26,19 @@
         </div>
     </header>
 
+    <!-- ==================== HERO / INICIO ==================== -->
     <section id="inicio" class="hero">
         <div class="container">
-            <h2> Sistema de Gestión y Coordinación ante Emergencias</h2>
+            <h2>🌊 Sistema de Gestión y Coordinación ante Emergencias</h2>
             <p>Centralizá, organizá y coordiná la asistencia en situaciones de emergencia: inundaciones, incendios, evacuaciones, temporales y más.</p>
             <a href="#solicitudes" class="btn">Reportar una emergencia</a>
         </div>
     </section>
 
+    <!-- ==================== EMERGENCIAS ACTIVAS ==================== -->
     <section id="emergencias" class="section">
         <div class="container">
-            <h2> Emergencias Activas</h2>
+            <h2>🚨 Emergencias Activas</h2>
             <div class="cards">
                 <div class="card">
                     <span class="icon">🌊</span>
@@ -66,13 +68,14 @@
                     <span class="badge">Finalizado</span>
                 </div>
             </div>
-            <div class="ver-mas">
-                <a href="#" class="btn btn-alerta">Ver todas las emergencias</a>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" class="btn" style="background:#c0392b; color:white;">Ver todas las emergencias</a>
             </div>
         </div>
     </section>
 
-    <section id="recursos" class="section section-alt">
+    <!-- ==================== RECURSOS ==================== -->
+    <section id="recursos" class="section" style="background:#ecf0f1;">
         <div class="container">
             <h2>📦 Recursos Disponibles</h2>
             <div class="cards">
@@ -105,12 +108,13 @@
                     <p><strong>Estado:</strong> Bajo</p>
                 </div>
             </div>
-            <div class="ver-mas">
-                <a href="#" class="btn btn-alerta">Gestionar recursos</a>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" class="btn" style="background:#c0392b; color:white;">Gestionar recursos</a>
             </div>
         </div>
     </section>
 
+    <!-- ==================== REFUGIOS ==================== -->
     <section id="refugios" class="section">
         <div class="container">
             <h2>🏠 Refugios Habilitados</h2>
@@ -143,7 +147,8 @@
         </div>
     </section>
 
-    <section id="voluntarios" class="section section-alt">
+    <!-- ==================== VOLUNTARIOS ==================== -->
+    <section id="voluntarios" class="section" style="background:#ecf0f1;">
         <div class="container">
             <h2>👷 Voluntarios Registrados</h2>
             <div class="cards">
@@ -175,12 +180,14 @@
         </div>
     </section>
 
+    <!-- ==================== SOLICITUDES DE ASISTENCIA ==================== -->
     <section id="solicitudes" class="section">
         <div class="container">
             <h2>🆘 Solicitudes de Asistencia</h2>
             
+            <!-- Formulario de solicitud -->
             <div class="formulario">
-                <h3 class="titulo-form">📝 Reportar nueva solicitud</h3>
+                <h3 style="color:#c0392b; margin-bottom:15px;">📝 Reportar nueva solicitud</h3>
                 <form>
                     <label for="tipo-solicitud">Tipo de solicitud:</label>
                     <select id="tipo-solicitud" name="tipo-solicitud">
@@ -214,84 +221,87 @@
                 </form>
             </div>
 
-            <div class="solicitudes-recientes">
-                <h3 class="titulo-form">📋 Solicitudes recientes</h3>
-                <div class="cards">
+            <!-- Listado de solicitudes -->
+            <div style="margin-top: 40px;">
+                <h3 style="color:#c0392b;">📋 Solicitudes recientes</h3>
+                <div class="cards" style="margin-top:20px;">
                     <div class="card">
                         <h3>🆘 Alimentos - Barrio Sur</h3>
                         <p><strong>Prioridad:</strong> Alta</p>
                         <p><strong>Estado:</strong> Pendiente</p>
                         <p><strong>Contacto:</strong> 11-2345-6789</p>
-                        <span class="badge badge-pendiente">Pendiente</span>
+                        <span class="badge" style="background:#f39c12;">Pendiente</span>
                     </div>
                     <div class="card">
                         <h3>🆘 Agua - Zona Norte</h3>
                         <p><strong>Prioridad:</strong> Alta</p>
                         <p><strong>Estado:</strong> En proceso</p>
                         <p><strong>Contacto:</strong> 11-3456-7890</p>
-                        <span class="badge badge-proceso">En proceso</span>
+                        <span class="badge" style="background:#3498db;">En proceso</span>
                     </div>
                     <div class="card">
                         <h3>🆘 Medicamentos - Villa Esperanza</h3>
                         <p><strong>Prioridad:</strong> Media</p>
                         <p><strong>Estado:</strong> Atendida</p>
                         <p><strong>Contacto:</strong> 11-4567-8901</p>
-                        <span class="badge badge-atendida">Atendida</span>
+                        <span class="badge" style="background:#27ae60;">Atendida</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="estadisticas" class="section section-oscura">
+    <!-- ==================== ESTADÍSTICAS ==================== -->
+    <section id="estadisticas" class="section" style="background:#2c3e50; color:white;">
         <div class="container">
-            <h2 class="titulo-oscuro">📊 Estadísticas del Sistema</h2>
+            <h2 style="color:#e74c3c; border-bottom-color:#e74c3c;">📊 Estadísticas del Sistema</h2>
             <div class="estadisticas">
-                <div class="estadistica-item">
-                    <div class="numero">3</div>
-                    <div class="label">Emergencias activas</div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">3</div>
+                    <div class="label" style="color:#bdc3c7;">Emergencias activas</div>
                 </div>
-                <div class="estadistica-item">
-                    <div class="numero">195</div>
-                    <div class="label">Personas asistidas</div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">195</div>
+                    <div class="label" style="color:#bdc3c7;">Personas asistidas</div>
                 </div>
-                <div class="estadistica-item">
-                    <div class="numero">12</div>
-                    <div class="label">Voluntarios activos</div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">12</div>
+                    <div class="label" style="color:#bdc3c7;">Voluntarios activos</div>
                 </div>
-                <div class="estadistica-item">
-                    <div class="numero">218</div>
-                    <div class="label">Lugares en refugios</div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">218</div>
+                    <div class="label" style="color:#bdc3c7;">Lugares en refugios</div>
                 </div>
-                <div class="estadistica-item">
-                    <div class="numero">85%</div>
-                    <div class="label">Solicitudes atendidas</div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">85%</div>
+                    <div class="label" style="color:#bdc3c7;">Solicitudes atendidas</div>
                 </div>
-                <div class="estadistica-item">
-                    <div class="numero">4</div>
-                    <div class="label">Zonas afectadas</div>
+                <div class="estadistica-item" style="background:#34495e; color:white;">
+                    <div class="numero" style="color:#e74c3c;">4</div>
+                    <div class="label" style="color:#bdc3c7;">Zonas afectadas</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==================== CONTACTO ==================== -->
     <section id="contacto" class="section">
         <div class="container">
             <h2>📧 Contacto</h2>
-            <div class="contacto-grid">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
                 <div>
-                    <h3 class="titulo-form">📞 Atención 24/7</h3>
+                    <h3 style="color:#c0392b;">📞 Atención 24/7</h3>
                     <p><strong>Teléfono de emergencia:</strong> 0800-333-1234</p>
                     <p><strong>Email:</strong> emergencias@proyecto.com</p>
                     <p><strong>Dirección:</strong> Av. Principal 123, Centro</p>
-                    <div class="aviso-emergencia">
-                        <p class="aviso-texto">
+                    <div style="margin-top: 20px;">
+                        <p style="background:#f39c12; color:white; padding:10px; border-radius:5px;">
                             ⚠️ <strong>En caso de emergencia grave, llamá al 911</strong>
                         </p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="titulo-form">📩 Enviar consulta</h3>
+                    <h3 style="color:#c0392b;">📩 Enviar consulta</h3>
                     <form>
                         <label for="nombre-contacto">Nombre:</label>
                         <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="Tu nombre">
@@ -302,25 +312,26 @@
                         <label for="mensaje-contacto">Mensaje:</label>
                         <textarea id="mensaje-contacto" name="mensaje-contacto" placeholder="Escribí tu consulta..."></textarea>
 
-                        <button type="submit" class="btn btn-enviar">Enviar mensaje</button>
+                        <button type="submit" style="background:#c0392b; color:white; padding:12px 30px; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Enviar mensaje</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="container">
-            <p> <strong>Sistema de Gestión y Coordinación ante Emergencias Comunitarias</strong></p>
-            <p>© 2026 - Desarrollado para organizaciones comunitarias | Todos los derechos reservados</p>
-            <p class="footer-links">
-                <a href="#inicio">Inicio</a> | 
-                <a href="#emergencias">Emergencias</a> | 
-                <a href="#recursos">Recursos</a> | 
-                <a href="#refugios">Refugios</a> | 
-                <a href="#voluntarios">Voluntarios</a> | 
-                <a href="#solicitudes">Solicitudes</a> | 
-                <a href="#estadisticas">Estadísticas</a>
+            <p>🚨 <strong>Sistema de Gestión y Coordinación ante Emergencias Comunitarias</strong></p>
+            <p>© 2026 - Proyecto Integrador | Desarrollado para organizaciones comunitarias</p>
+            <p style="font-size:14px; color:#95a5a6; margin-top:10px;">
+                <a href="#inicio" style="color:#95a5a6; text-decoration:none;">Inicio</a> | 
+                <a href="#emergencias" style="color:#95a5a6; text-decoration:none;">Emergencias</a> | 
+                <a href="#recursos" style="color:#95a5a6; text-decoration:none;">Recursos</a> | 
+                <a href="#refugios" style="color:#95a5a6; text-decoration:none;">Refugios</a> | 
+                <a href="#voluntarios" style="color:#95a5a6; text-decoration:none;">Voluntarios</a> | 
+                <a href="#solicitudes" style="color:#95a5a6; text-decoration:none;">Solicitudes</a> | 
+                <a href="#estadisticas" style="color:#95a5a6; text-decoration:none;">Estadísticas</a>
             </p>
         </div>
     </footer>
