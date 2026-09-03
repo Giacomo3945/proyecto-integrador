@@ -343,3 +343,191 @@ footer p {
 .footer-links a:hover {
   color: var(--color-blanco);
 }
+
+/* ============================================================
+   NUEVO: FLEXBOX, GRID Y MEDIA QUERIES
+   Agregado por Giacomo - Trabajo Integrador
+   ============================================================ */
+
+/* ============================================================
+   1. FLEXBOX - HEADER / NAVEGACIÓN
+   ============================================================ */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--espaciado-sm);
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   2. FLEXBOX - ESTADÍSTICAS
+   ============================================================ */
+.estadisticas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espaciado-md);
+}
+
+.estadistica-item {
+    flex: 1 1 120px;
+    max-width: 160px;
+}
+
+/* ============================================================
+   3. FLEXBOX - FOOTER
+   ============================================================ */
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espaciado-xs);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espaciado-xs);
+}
+
+/* ============================================================
+   4. GRID - TARJETAS (CARDS)
+   ============================================================ */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espaciado-md);
+}
+
+/* Grid específico para contacto */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espaciado-lg);
+}
+
+/* ============================================================
+   5. MEDIA QUERIES (RESPONSIVE)
+   ============================================================ */
+
+/* ---- TABLET: 601px a 1024px ---- */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Grid a 2 columnas */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Header: menú más compacto */
+    header nav ul {
+        gap: var(--espaciado-xs);
+    }
+    
+    header nav ul li a {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ---- CELULAR: hasta 600px ---- */
+@media (max-width: 600px) {
+    /* HEADER: menú vertical */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        width: 100%;
+    }
+    
+    header nav ul li {
+        width: 100%;
+    }
+    
+    header nav ul li a {
+        display: block;
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+    
+    /* HERO: texto más chico */
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    /* GRID: todas las cards a 1 columna */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* ESTADÍSTICAS: más compactas */
+    .estadisticas {
+        gap: var(--espaciado-sm);
+    }
+    
+    .estadistica-item {
+        flex: 1 1 80px;
+        max-width: 120px;
+        padding: var(--espaciado-sm);
+    }
+    
+    .estadistica-item .numero {
+        font-size: 1.8rem;
+    }
+    
+    .estadistica-item .label {
+        font-size: 0.7rem;
+    }
+    
+    /* FORMULARIOS: más compactos */
+    .formulario {
+        padding: var(--espaciado-sm);
+    }
+    
+    input, select, textarea {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+    
+    /* FOOTER: links en columna */
+    .footer-links {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+    
+    /* TÍTULOS: más chicos */
+    .section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
