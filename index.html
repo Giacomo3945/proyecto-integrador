@@ -75,7 +75,7 @@
     </section>
 
     <!-- ==================== RECURSOS ==================== -->
-    <section id="recursos" class="section" style="background:#ecf0f1;">
+    <section id="recursos" class="section section-alt">
         <div class="container">
             <h2>📦 Recursos Disponibles</h2>
             <div class="cards">
@@ -148,7 +148,7 @@
     </section>
 
     <!-- ==================== VOLUNTARIOS ==================== -->
-    <section id="voluntarios" class="section" style="background:#ecf0f1;">
+    <section id="voluntarios" class="section section-alt" >
         <div class="container">
             <h2>👷 Voluntarios Registrados</h2>
             <div class="cards">
@@ -230,21 +230,21 @@
                         <p><strong>Prioridad:</strong> Alta</p>
                         <p><strong>Estado:</strong> Pendiente</p>
                         <p><strong>Contacto:</strong> 11-2345-6789</p>
-                        <span class="badge" style="background:#f39c12;">Pendiente</span>
+                        <span class="badge badge-pendiente">Pendiente</span>
                     </div>
                     <div class="card">
                         <h3>🆘 Agua - Zona Norte</h3>
                         <p><strong>Prioridad:</strong> Alta</p>
                         <p><strong>Estado:</strong> En proceso</p>
                         <p><strong>Contacto:</strong> 11-3456-7890</p>
-                        <span class="badge" style="background:#3498db;">En proceso</span>
+                        <span class="badge badge-proceso">En proceso</span>
                     </div>
                     <div class="card">
                         <h3>🆘 Medicamentos - Villa Esperanza</h3>
                         <p><strong>Prioridad:</strong> Media</p>
                         <p><strong>Estado:</strong> Atendida</p>
                         <p><strong>Contacto:</strong> 11-4567-8901</p>
-                        <span class="badge" style="background:#27ae60;">Atendida</span>
+                        <span class="badge badge-atendida">Atendida</span>
                     </div>
                 </div>
             </div>
@@ -252,9 +252,9 @@
     </section>
 
     <!-- ==================== ESTADÍSTICAS ==================== -->
-    <section id="estadisticas" class="section" style="background:#2c3e50; color:white;">
+    <section id="estadisticas" class="section section-oscura">
         <div class="container">
-            <h2 style="color:#e74c3c; border-bottom-color:#e74c3c;">📊 Estadísticas del Sistema</h2>
+            <h2 class="titulo-oscuro">📊 Estadísticas del Sistema</h2>
             <div class="estadisticas">
                 <div class="estadistica-item" style="background:#34495e; color:white;">
                     <div class="numero" style="color:#e74c3c;">3</div>
@@ -288,7 +288,7 @@
     <section id="contacto" class="section">
         <div class="container">
             <h2>📧 Contacto</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+             <div class="contacto-grid">
                 <div>
                     <h3 style="color:#c0392b;">📞 Atención 24/7</h3>
                     <p><strong>Teléfono de emergencia:</strong> 0800-333-1234</p>
@@ -324,16 +324,17 @@
         <div class="container">
             <p>🚨 <strong>Sistema de Gestión y Coordinación ante Emergencias Comunitarias</strong></p>
             <p>© 2026 - Proyecto Integrador | Desarrollado para organizaciones comunitarias</p>
-            <p style="font-size:14px; color:#95a5a6; margin-top:10px;">
-                <a href="#inicio" style="color:#95a5a6; text-decoration:none;">Inicio</a> | 
-                <a href="#emergencias" style="color:#95a5a6; text-decoration:none;">Emergencias</a> | 
-                <a href="#recursos" style="color:#95a5a6; text-decoration:none;">Recursos</a> | 
-                <a href="#refugios" style="color:#95a5a6; text-decoration:none;">Refugios</a> | 
-                <a href="#voluntarios" style="color:#95a5a6; text-decoration:none;">Voluntarios</a> | 
-                <a href="#solicitudes" style="color:#95a5a6; text-decoration:none;">Solicitudes</a> | 
-                <a href="#estadisticas" style="color:#95a5a6; text-decoration:none;">Estadísticas</a>
-            </p>
+            <div class="footer-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#emergencias">Emergencias</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#refugios">Refugios</a>
+    <a href="#voluntarios">Voluntarios</a>
+    <a href="#solicitudes">Solicitudes</a>
+    <a href="#estadisticas">Estadísticas</a>
+</div>
         </div>
+        
     </footer>
 </body>
 </html>
