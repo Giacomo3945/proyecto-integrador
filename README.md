@@ -1,8 +1,9 @@
 # Sistema de Gestión de Emergencias Comunitarias
 
 ## Integrantes
-- Giacomo3945
-- conty-111
+- Marangon Giacomo (Giacomo3945)
+- Medina Nadia (nadiaamedina)
+- Luna Constanza (conty-111)
 
 ## Descripción
 Sistema web para la gestión y coordinación de emergencias comunitarias. Permite visualizar emergencias activas, recursos disponibles, refugios habilitados, voluntarios registrados y solicitudes de asistencia.
