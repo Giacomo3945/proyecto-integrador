@@ -29,6 +29,7 @@ Sistema web para la gestión y coordinación de emergencias comunitarias. Permit
 - `--color-fondo-alt`: #ecf0f1 (gris más claro)
 - `--color-fondo-oscuro`: #2c3e50 (gris oscuro)
 - `--color-texto`: #333333 (gris oscuro)
+- `--color-blanco`: #ffffff (blanco, usado en textos sobre fondos oscuros y botones)
 - `--fuente-principal`: 'Segoe UI', Roboto, sans-serif
 - `--espaciado-xs/sm/md/lg`: Espaciados estándar
 - `--radio-borde`: 8px (bordes redondeados)
