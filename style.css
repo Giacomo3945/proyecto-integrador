@@ -209,6 +209,18 @@ nav ul li a:hover {
   background-color: var(--color-exito);
 }
 
+.badge-activo {
+  background-color: var(--color-exito);
+}
+
+.badge-casi-lleno {
+  background-color: var(--color-alerta);
+} 
+
+.badge-disponible {
+  background-color: var(--color-info);
+}
+
 /* ===== BOTONES ===== */
 .btn {
   display: inline-block;
