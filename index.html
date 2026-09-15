@@ -208,47 +208,56 @@
         <!-- ==================== SOLICITUDES DE ASISTENCIA ==================== -->
         <section id="solicitudes" class="section">
             <div class="container">
-                <h2>🆘 Solicitudes de Asistencia</h2>
+                <h2><i class="bi bi-life-preserver"></i> Solicitudes de Asistencia</h2>
                 
                 <!-- Formulario de solicitud -->
                 <div class="formulario">
-                    <h3 class="titulo-form">📝 Reportar nueva solicitud</h3>
-                    <form>
-                        <label for="tipo-solicitud">Tipo de solicitud:</label>
-                        <select id="tipo-solicitud" name="tipo-solicitud">
-                            <option>Alimentos</option>
-                            <option>Agua</option>
-                            <option>Medicamentos</option>
-                            <option>Ropa / Abrigo</option>
-                            <option>Refugio / Alojamiento</option>
-                            <option>Asistencia médica</option>
-                            <option>Evacuación</option>
-                            <option>Otro</option>
-                        </select>
-
-                        <label for="ubicacion">Ubicación:</label>
-                        <input type="text" id="ubicacion" name="ubicacion" placeholder="Barrio, calle, referencia...">
-
-                        <label for="prioridad">Prioridad:</label>
-                        <select id="prioridad" name="prioridad">
-                            <option>Alta (Urgente)</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-
-                        <label for="descripcion">Descripción detallada:</label>
-                        <textarea id="descripcion" name="descripcion" placeholder="Describí la situación, cantidad de personas afectadas, necesidades específicas..."></textarea>
-
-                        <label for="contacto-solicitud">Contacto (teléfono o email):</label>
-                        <input type="text" id="contacto-solicitud" name="contacto" placeholder="Teléfono de contacto">
-
-                        <button type="submit">🚨 Enviar solicitud</button>
+                    <h3 class="titulo-form"><i class="bi bi-pencil-square"></i> Reportar nueva solicitud</h3>
+                                        <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="tipo-solicitud" class="form-label">Tipo de solicitud</label>
+                                <select id="tipo-solicitud" name="tipo-solicitud" class="form-select">
+                                    <option>Alimentos</option>
+                                    <option>Agua</option>
+                                    <option>Medicamentos</option>
+                                    <option>Ropa / Abrigo</option>
+                                    <option>Refugio / Alojamiento</option>
+                                    <option>Asistencia médica</option>
+                                    <option>Evacuación</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="prioridad" class="form-label">Prioridad</label>
+                                <select id="prioridad" name="prioridad" class="form-select">
+                                    <option>Alta (Urgente)</option>
+                                    <option>Media</option>
+                                    <option>Baja</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ubicacion" class="form-label">Ubicación</label>
+                                <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Barrio, calle, referencia...">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contacto-solicitud" class="form-label">Contacto (teléfono o email)</label>
+                                <input type="text" id="contacto-solicitud" name="contacto" class="form-control" placeholder="Teléfono de contacto">
+                            </div>
+                            <div class="col-12">
+                                <label for="descripcion" class="form-label">Descripción detallada</label>
+                                <textarea id="descripcion" name="descripcion" class="form-control" rows="4" placeholder="Describí la situación, cantidad de personas afectadas, necesidades específicas..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-alerta btn-lg">Enviar solicitud</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
             <!-- Listado de solicitudes -->
             <div class="solicitudes-recientes">
-                <h3 class="titulo-form">📋 Solicitudes recientes</h3>
+               <h3 class="titulo-form"><i class="bi bi-list-check"></i> Solicitudes recientes</h3>
                 <div class="cards">
                     <article class="card">
                         <h3>🆘 Alimentos - Barrio Sur</h3>
