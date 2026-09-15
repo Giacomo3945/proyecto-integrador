@@ -319,39 +319,41 @@
         </section>
 
     <!-- ==================== CONTACTO ==================== -->
-    <section id="contacto" class="section">
+        <section id="contacto" class="section">
         <div class="container">
-            <h2>📧 Contacto</h2>
-             <div class="contacto-grid">
-                <div>
-                    <h3  class="titulo-form">📞 Atención 24/7</h3>
+            <h2><i class="bi bi-envelope-at"></i> Contacto</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h3 class="titulo-form"><i class="bi bi-telephone"></i> Atención 24/7</h3>
                     <p><strong>Teléfono de emergencia:</strong> 0800-333-1234</p>
                     <p><strong>Email:</strong> emergencias@proyecto.com</p>
                     <p><strong>Dirección:</strong> Av. Principal 123, Centro</p>
-                    <div class="aviso-emergencia">
-                        <p class="aviso-texto">
-                            ⚠️ <strong>En caso de emergencia grave, llamá al 911</strong>
-                        </p>
-                    </div>
-                   </div>
-                    <div>
-                        <h3 class="titulo-form">📩 Enviar consulta</h3>
-                        <form>
-                            <label for="nombre-contacto">Nombre:</label>
-                            <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="Tu nombre">
-
-                            <label for="email-contacto">Email:</label>
-                            <input type="email" id="email-contacto" name="email-contacto" placeholder="tu@email.com">
-
-                            <label for="mensaje-contacto">Mensaje:</label>
-                            <textarea id="mensaje-contacto" name="mensaje-contacto" placeholder="Escribí tu consulta..."></textarea>
-
-                            <button type="submit" class="btn btn-enviar">Enviar mensaje</button>
-                        </form>
+                    <div class="alert alert-warning mt-3 d-inline-block" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <strong>En caso de emergencia grave, llamá al 911</strong>
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <h3 class="titulo-form"><i class="bi bi-envelope"></i> Enviar consulta</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre-contacto" class="form-label">Nombre</label>
+                            <input type="text" id="nombre-contacto" name="nombre-contacto" class="form-control" placeholder="Tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email-contacto" class="form-label">Email</label>
+                            <input type="email" id="email-contacto" name="email-contacto" class="form-control" placeholder="tu@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje-contacto" class="form-label">Mensaje</label>
+                            <textarea id="mensaje-contacto" name="mensaje-contacto" class="form-control" rows="4" placeholder="Escribí tu consulta..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-alerta btn-lg">Enviar mensaje</button>
+                    </form>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
     <!-- ==================== FOOTER ==================== -->
     <footer>

@@ -651,3 +651,9 @@ footer .container {
     font-size: 1.75rem;
   }
 }
+
+.titulo-form {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+}
