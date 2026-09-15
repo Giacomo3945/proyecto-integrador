@@ -18,30 +18,45 @@
 </head>
 <body>
     <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
-    <header>
-        <div class="container">
-            <h1><i class="bi bi-shield-exclamation"></i> GECO</h1>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#emergencias">Emergencias</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#refugios">Refugios</a></li>
-                    <li><a href="#voluntarios">Voluntarios</a></li>
-                    <li><a href="#solicitudes">Solicitudes</a></li>
-                    <li><a href="#estadisticas">Estadísticas</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#inicio">
+                    <i class="bi bi-shield-exclamation"></i> GECO
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#emergencias">Emergencias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#recursos">Recursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#refugios">Refugios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#voluntarios">Voluntarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#solicitudes">Solicitudes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#estadisticas">Estadísticas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <!-- ==================== HERO / INICIO ==================== -->
-        <section id="inicio" class="hero">
-            <div class="container">
-                <h2>🌊 Sistema de Gestión y Coordinación ante Emergencias</h2>
-                <p>Centralizá, organizá y coordiná la asistencia en situaciones de emergencia: inundaciones, incendios, evacuaciones, temporales y más.</p>
-                <a href="#solicitudes" class="btn">Reportar una emergencia</a>
+                <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-contenido">
+                <p class="hero-estado">
+                    <span class="hero-punto"></span>
+                    3 emergencias activas · 195 personas asistidas
+                </p>
+                <h2>Gestión y coordinación ante emergencias comunitarias</h2>
+                <p class="hero-texto">Centralizá, organizá y coordiná la asistencia en situaciones de emergencia: inundaciones, incendios, evacuaciones, temporales y más.</p>
+                <div class="hero-acciones">
+                    <a href="#solicitudes" class="btn btn-alerta btn-lg">Reportar una emergencia</a>
+                    <a href="#emergencias" class="btn btn-outline-claro btn-lg">Ver emergencias activas</a>
+                </div>
             </div>
         </section>
 
@@ -213,47 +228,56 @@
         <!-- ==================== SOLICITUDES DE ASISTENCIA ==================== -->
         <section id="solicitudes" class="section">
             <div class="container">
-                <h2>🆘 Solicitudes de Asistencia</h2>
+                <h2><i class="bi bi-life-preserver"></i> Solicitudes de Asistencia</h2>
                 
                 <!-- Formulario de solicitud -->
                 <div class="formulario">
-                    <h3 class="titulo-form">📝 Reportar nueva solicitud</h3>
-                    <form>
-                        <label for="tipo-solicitud">Tipo de solicitud:</label>
-                        <select id="tipo-solicitud" name="tipo-solicitud">
-                            <option>Alimentos</option>
-                            <option>Agua</option>
-                            <option>Medicamentos</option>
-                            <option>Ropa / Abrigo</option>
-                            <option>Refugio / Alojamiento</option>
-                            <option>Asistencia médica</option>
-                            <option>Evacuación</option>
-                            <option>Otro</option>
-                        </select>
-
-                        <label for="ubicacion">Ubicación:</label>
-                        <input type="text" id="ubicacion" name="ubicacion" placeholder="Barrio, calle, referencia...">
-
-                        <label for="prioridad">Prioridad:</label>
-                        <select id="prioridad" name="prioridad">
-                            <option>Alta (Urgente)</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-
-                        <label for="descripcion">Descripción detallada:</label>
-                        <textarea id="descripcion" name="descripcion" placeholder="Describí la situación, cantidad de personas afectadas, necesidades específicas..."></textarea>
-
-                        <label for="contacto-solicitud">Contacto (teléfono o email):</label>
-                        <input type="text" id="contacto-solicitud" name="contacto" placeholder="Teléfono de contacto">
-
-                        <button type="submit">🚨 Enviar solicitud</button>
+                    <h3 class="titulo-form"><i class="bi bi-pencil-square"></i> Reportar nueva solicitud</h3>
+                                        <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="tipo-solicitud" class="form-label">Tipo de solicitud</label>
+                                <select id="tipo-solicitud" name="tipo-solicitud" class="form-select">
+                                    <option>Alimentos</option>
+                                    <option>Agua</option>
+                                    <option>Medicamentos</option>
+                                    <option>Ropa / Abrigo</option>
+                                    <option>Refugio / Alojamiento</option>
+                                    <option>Asistencia médica</option>
+                                    <option>Evacuación</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="prioridad" class="form-label">Prioridad</label>
+                                <select id="prioridad" name="prioridad" class="form-select">
+                                    <option>Alta (Urgente)</option>
+                                    <option>Media</option>
+                                    <option>Baja</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ubicacion" class="form-label">Ubicación</label>
+                                <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Barrio, calle, referencia...">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contacto-solicitud" class="form-label">Contacto (teléfono o email)</label>
+                                <input type="text" id="contacto-solicitud" name="contacto" class="form-control" placeholder="Teléfono de contacto">
+                            </div>
+                            <div class="col-12">
+                                <label for="descripcion" class="form-label">Descripción detallada</label>
+                                <textarea id="descripcion" name="descripcion" class="form-control" rows="4" placeholder="Describí la situación, cantidad de personas afectadas, necesidades específicas..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-alerta btn-lg">Enviar solicitud</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
             <!-- Listado de solicitudes -->
             <div class="solicitudes-recientes">
-                <h3 class="titulo-form">📋 Solicitudes recientes</h3>
+               <h3 class="titulo-form"><i class="bi bi-list-check"></i> Solicitudes recientes</h3>
                 <div class="cards">
                     <article class="card">
                         <h3>🆘 Alimentos - Barrio Sur</h3>
@@ -315,39 +339,41 @@
         </section>
 
     <!-- ==================== CONTACTO ==================== -->
-    <section id="contacto" class="section">
+        <section id="contacto" class="section">
         <div class="container">
-            <h2>📧 Contacto</h2>
-             <div class="contacto-grid">
-                <div>
-                    <h3  class="titulo-form">📞 Atención 24/7</h3>
+            <h2><i class="bi bi-envelope-at"></i> Contacto</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h3 class="titulo-form"><i class="bi bi-telephone"></i> Atención 24/7</h3>
                     <p><strong>Teléfono de emergencia:</strong> 0800-333-1234</p>
                     <p><strong>Email:</strong> emergencias@proyecto.com</p>
                     <p><strong>Dirección:</strong> Av. Principal 123, Centro</p>
-                    <div class="aviso-emergencia">
-                        <p class="aviso-texto">
-                            ⚠️ <strong>En caso de emergencia grave, llamá al 911</strong>
-                        </p>
-                    </div>
-                   </div>
-                    <div>
-                        <h3 class="titulo-form">📩 Enviar consulta</h3>
-                        <form>
-                            <label for="nombre-contacto">Nombre:</label>
-                            <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="Tu nombre">
-
-                            <label for="email-contacto">Email:</label>
-                            <input type="email" id="email-contacto" name="email-contacto" placeholder="tu@email.com">
-
-                            <label for="mensaje-contacto">Mensaje:</label>
-                            <textarea id="mensaje-contacto" name="mensaje-contacto" placeholder="Escribí tu consulta..."></textarea>
-
-                            <button type="submit" class="btn btn-enviar">Enviar mensaje</button>
-                        </form>
+                    <div class="alert alert-warning mt-3 d-inline-block" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <strong>En caso de emergencia grave, llamá al 911</strong>
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <h3 class="titulo-form"><i class="bi bi-envelope"></i> Enviar consulta</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre-contacto" class="form-label">Nombre</label>
+                            <input type="text" id="nombre-contacto" name="nombre-contacto" class="form-control" placeholder="Tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email-contacto" class="form-label">Email</label>
+                            <input type="email" id="email-contacto" name="email-contacto" class="form-control" placeholder="tu@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje-contacto" class="form-label">Mensaje</label>
+                            <textarea id="mensaje-contacto" name="mensaje-contacto" class="form-control" rows="4" placeholder="Escribí tu consulta..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-alerta btn-lg">Enviar mensaje</button>
+                    </form>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
     <!-- ==================== FOOTER ==================== -->
     <footer>

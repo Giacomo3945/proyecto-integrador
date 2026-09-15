@@ -70,7 +70,7 @@ body {
 header {
   background-color: var(--color-primario);
   color: var(--color-blanco);
-  padding: var(--espaciado-md) 0;
+  padding: 0;
   box-shadow: var(--sombra-suave);
 }
 
@@ -79,7 +79,8 @@ header h1 {
   margin-bottom: var(--espaciado-xs);
 }
 
-/* ===== NAVEGACIÓN (solo tipografía/color) ===== */
+/* ===== NAVEGACIÓN (solo tipografía/color) ===== 
+Reemplazado por el navbar de Bootstrap - TP3
 nav ul li a {
   color: var(--color-blanco);
   text-decoration: none;
@@ -92,7 +93,7 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.15);
-}
+}*/
 
 /* ===== HERO / INICIO ===== */
 .hero {
@@ -357,7 +358,7 @@ footer p {
 
 /* ============================================================
    1. FLEXBOX - HEADER / NAVEGACIÓN
-   ============================================================ */
+   ============================================================ Reemplazado por el navbar de Bootstrap - TP3
 header .container {
     display: flex;
     justify-content: space-between;
@@ -370,7 +371,7 @@ header nav ul {
     list-style: none;
     gap: var(--espaciado-sm);
     flex-wrap: wrap;
-}
+}*/
 
 /* ============================================================
    2. FLEXBOX - ESTADÍSTICAS
@@ -435,7 +436,7 @@ footer .container {
         grid-template-columns: 1fr 1fr;
     }
     
-    /* Header: menú más compacto */
+    /* Header: menú más compacto --- Reemplazado por el navbar de Bootstrap - TP3
     header nav ul {
         gap: var(--espaciado-xs);
     }
@@ -443,7 +444,7 @@ footer .container {
     header nav ul li a {
         font-size: 0.85rem;
         padding: 0.35rem 0.5rem;
-    }
+    }*/
     
     .hero h2 {
         font-size: 1.8rem;
@@ -452,7 +453,8 @@ footer .container {
 
 /* ---- CELULAR: hasta 600px ---- */
 @media (max-width: 600px) {
-    /* HEADER: menú vertical */
+    /* HEADER: menú vertical 
+    Reemplazado por el navbar de Bootstrap - TP3
     header .container {
         flex-direction: column;
         text-align: center;
@@ -473,7 +475,7 @@ footer .container {
         display: block;
         padding: 0.4rem;
         font-size: 0.9rem;
-    }
+    }*/
     
     /* HERO: texto más chico */
     .hero h2 {
@@ -536,4 +538,124 @@ footer .container {
     .hero h2 {
         font-size: 1.5rem;
     }
+}
+/* ============================================================
+   NAVBAR BOOTSTRAP - Personalización TP3
+   ============================================================ */
+
+.navbar {
+  background-color: var(--color-primario);
+ 
+}
+
+.navbar-brand {
+  font-size: var(--tam-titulo-h1);
+  font-weight: bold;
+  color: var(--color-blanco);
+}
+
+.navbar-brand:hover {
+  color: var(--color-blanco);
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-blanco);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  border-radius: var(--radio-borde);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* ============================================================
+   HERO - Personalización TP3
+   ============================================================ */
+
+.hero {
+  position: relative;
+  background-color: var(--color-fondo-oscuro);
+  background-image: url('img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: var(--espaciado-lg) 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(44, 62, 80, 0.75);
+}
+
+.hero-contenido {
+  position: relative;
+  text-align: center;
+}
+
+.hero .hero-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-blanco);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: var(--espaciado-md);
+}
+
+.hero-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-exito);
+}
+
+.hero h2 {
+  color: var(--color-blanco);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: var(--espaciado-sm);
+}
+
+.hero .hero-texto {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto var(--espaciado-lg) auto;
+}
+
+.hero-acciones {
+  display: flex;
+  gap: var(--espaciado-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline-claro {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 2px solid var(--color-blanco);
+}
+
+.btn-outline-claro:hover {
+  background-color: var(--color-blanco);
+  color: var(--color-fondo-oscuro);
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.titulo-form {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
 }
