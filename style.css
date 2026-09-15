@@ -79,7 +79,8 @@ header h1 {
   margin-bottom: var(--espaciado-xs);
 }
 
-/* ===== NAVEGACIÓN (solo tipografía/color) ===== */
+/* ===== NAVEGACIÓN (solo tipografía/color) ===== 
+Reemplazado por el navbar de Bootstrap - TP3
 nav ul li a {
   color: var(--color-blanco);
   text-decoration: none;
@@ -92,7 +93,7 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.15);
-}
+}*/
 
 /* ===== HERO / INICIO ===== */
 .hero {
@@ -357,7 +358,7 @@ footer p {
 
 /* ============================================================
    1. FLEXBOX - HEADER / NAVEGACIÓN
-   ============================================================ */
+   ============================================================ Reemplazado por el navbar de Bootstrap - TP3
 header .container {
     display: flex;
     justify-content: space-between;
@@ -370,7 +371,7 @@ header nav ul {
     list-style: none;
     gap: var(--espaciado-sm);
     flex-wrap: wrap;
-}
+}*/
 
 /* ============================================================
    2. FLEXBOX - ESTADÍSTICAS
@@ -435,7 +436,7 @@ footer .container {
         grid-template-columns: 1fr 1fr;
     }
     
-    /* Header: menú más compacto */
+    /* Header: menú más compacto --- Reemplazado por el navbar de Bootstrap - TP3
     header nav ul {
         gap: var(--espaciado-xs);
     }
@@ -443,7 +444,7 @@ footer .container {
     header nav ul li a {
         font-size: 0.85rem;
         padding: 0.35rem 0.5rem;
-    }
+    }*/
     
     .hero h2 {
         font-size: 1.8rem;
@@ -452,7 +453,8 @@ footer .container {
 
 /* ---- CELULAR: hasta 600px ---- */
 @media (max-width: 600px) {
-    /* HEADER: menú vertical */
+    /* HEADER: menú vertical 
+    Reemplazado por el navbar de Bootstrap - TP3
     header .container {
         flex-direction: column;
         text-align: center;
@@ -473,7 +475,7 @@ footer .container {
         display: block;
         padding: 0.4rem;
         font-size: 0.9rem;
-    }
+    }*/
     
     /* HERO: texto más chico */
     .hero h2 {
