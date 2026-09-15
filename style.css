@@ -70,7 +70,7 @@ body {
 header {
   background-color: var(--color-primario);
   color: var(--color-blanco);
-  padding: var(--espaciado-md) 0;
+  padding: 0;
   box-shadow: var(--sombra-suave);
 }
 
@@ -536,4 +536,36 @@ footer .container {
     .hero h2 {
         font-size: 1.5rem;
     }
+}
+/* ============================================================
+   NAVBAR BOOTSTRAP - Personalización TP3
+   ============================================================ */
+
+.navbar {
+  background-color: var(--color-primario);
+ 
+}
+
+.navbar-brand {
+  font-size: var(--tam-titulo-h1);
+  font-weight: bold;
+  color: var(--color-blanco);
+}
+
+.navbar-brand:hover {
+  color: var(--color-blanco);
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-blanco);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  border-radius: var(--radio-borde);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-blanco);
+  background-color: rgba(255, 255, 255, 0.15);
 }
