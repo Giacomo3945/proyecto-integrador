@@ -1,4 +1,4 @@
-# Sistema de Gestión de Emergencias Comunitarias
+# GECO | Gestión de Emergencias Comunitarias
 
 ## Integrantes
 - Marangon Giacomo (Giacomo3945)
@@ -6,7 +6,7 @@
 - Luna Constanza (conty-111)
 
 ## Descripción
-Sistema web para la gestión y coordinación de emergencias comunitarias. Permite visualizar emergencias activas, recursos disponibles, refugios habilitados, voluntarios registrados y solicitudes de asistencia.
+GECO es un sistema web para la gestión y coordinación de emergencias comunitarias. Permite visualizar emergencias activas, recursos disponibles, refugios habilitados, voluntarios registrados y solicitudes de asistencia.
 
 ## Tecnologías utilizadas
 - HTML5
