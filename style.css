@@ -579,7 +579,7 @@ footer .container {
 .hero {
   position: relative;
   background-color: var(--color-fondo-oscuro);
-  background-image: url('img/hero.jpg');
+  background-image: url('img/hero-accion.jpg');
   background-size: cover;
   background-position: center;
   min-height: 70vh;
@@ -591,7 +591,8 @@ footer .container {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(44, 62, 80, 0.75);
+  background-color: rgba(44, 62, 80, 0.6);
+  
 }
 
 .hero-contenido {
