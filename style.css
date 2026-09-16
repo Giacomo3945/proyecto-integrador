@@ -511,7 +511,7 @@ footer .container {
         grid-template-columns: 1fr;
     }
     
-    /* ESTADÍSTICAS: más compactas */
+    /* ESTADÍSTICAS: más compactas - Remplazado por Bootstrap - TP3 
     .estadisticas {
         gap: var(--espaciado-sm);
     }
@@ -528,7 +528,7 @@ footer .container {
     
     .estadistica-item .label {
         font-size: 0.7rem;
-    }
+    }*/
     
     /* FORMULARIOS: más compactos */
     .formulario {
