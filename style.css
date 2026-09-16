@@ -722,3 +722,15 @@ footer .container {
 .card > .badge {
   align-self: flex-start;
 }
+/* ============================================================
+   ICONOS EN TARJETAS - TP3
+   ============================================================ */
+
+.card .bi {
+    color: var(--color-primario);
+}
+
+.card h3 .bi {
+  font-size: 1.1rem;
+  margin-right: 0.25rem;
+}
