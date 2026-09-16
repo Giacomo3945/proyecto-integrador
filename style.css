@@ -703,3 +703,7 @@ footer .container {
   margin-top: auto;
   align-self: flex-start;
 }
+/* Evita que los badges se estiren al ancho de la tarjeta */
+.card > .badge {
+  align-self: flex-start;
+}
