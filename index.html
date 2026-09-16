@@ -64,37 +64,54 @@
         <section id="emergencias" class="section">
             <div class="container">
                 <h2>🚨 Emergencias Activas</h2>
-                <div class="cards">
-                    <article class="card">
-                        <span class="icon">🌊</span>
-                        <h3>Inundación - Barrio Norte</h3>
-                        <p><strong>Gravedad:</strong> Alta</p>
-                        <p><strong>Estado:</strong> En proceso</p>
-                        <p><strong>Fecha:</strong> 02/09/2026</p>
-                        <p><strong>Afectados:</strong> ~120 personas</p>
-                        <span class="badge">Urgente</span>
-                    </article>
-                    <article class="card">
-                        <span class="icon">🔥</span>
-                        <h3>Incendio - Zona Rural</h3>
-                        <p><strong>Gravedad:</strong> Media</p>
-                        <p><strong>Estado:</strong> Monitoreo</p>
-                        <p><strong>Fecha:</strong> 01/09/2026</p>
-                        <p><strong>Afectados:</strong> ~45 personas</p>
-                        <span class="badge">En curso</span>
-                    </article>
-                    <article class="card">
-                        <span class="icon">⛈️</span>
-                        <h3>Temporal - Costa Este</h3>
-                        <p><strong>Gravedad:</strong> Baja</p>
-                        <p><strong>Estado:</strong> Resuelto</p>
-                        <p><strong>Fecha:</strong> 30/08/2026</p>
-                        <p><strong>Afectados:</strong> ~30 personas</p>
-                        <span class="badge">Finalizado</span>
-                    </article>
+                <!-- Grilla responsive: 1 col en celular, 3 cols en tablet/PC -->
+                <div class="row row-cols-1 row-cols-md-3 g-3">
+                    
+                    <div class="col">
+                        <article class="card h-100">
+                            <div class="card-body">
+                                <span class="icon">🌊</span>
+                                <h3 class="card-title">Inundación - Barrio Norte</h3>
+                                <p class="card-text"><strong>Gravedad:</strong> Alta</p>
+                                <p class="card-text"><strong>Estado:</strong> En proceso</p>
+                                <p class="card-text"><strong>Fecha:</strong> 02/09/2026</p>
+                                <p class="card-text"><strong>Afectados:</strong> ~120 personas</p>
+                                <span class="badge badge-urgente">Urgente</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100">
+                            <div class="card-body">
+                                <span class="icon">🔥</span>
+                                <h3 class="card-title">Incendio - Zona Rural</h3>
+                                <p class="card-text"><strong>Gravedad:</strong> Media</p>
+                                <p class="card-text"><strong>Estado:</strong> Monitoreo</p>
+                                <p class="card-text"><strong>Fecha:</strong> 01/09/2026</p>
+                                <p class="card-text"><strong>Afectados:</strong> ~45 personas</p>
+                                <span class="badge badge-en-curso">En curso</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100">
+                            <div class="card-body">
+                                <span class="icon">⛈️</span>
+                                <h3 class="card-title">Temporal - Costa Este</h3>
+                                <p class="card-text"><strong>Gravedad:</strong> Baja</p>
+                                <p class="card-text"><strong>Estado:</strong> Resuelto</p>
+                                <p class="card-text"><strong>Fecha:</strong> 30/08/2026</p>
+                                <p class="card-text"><strong>Afectados:</strong> ~30 personas</p>
+                                <span class="badge badge-finalizado">Finalizado</span>
+                            </div>
+                        </article>
+                    </div>
+
                 </div>
                 <div style="margin-top: 20px; text-align: center;">
-                  <a href="#" class="btn btn-alerta">Ver todas las emergencias</a>
+                  <a href="#" class="btn btn-custom btn-alerta">Ver todas las emergencias</a>
                 </div>
             </div>
         </section>
@@ -200,35 +217,52 @@
             </div>
         </section>
 
-    <!-- ==================== VOLUNTARIOS ==================== -->
+        <!-- ==================== VOLUNTARIOS ==================== -->
     <section id="voluntarios" class="section section-alt" >
         <div class="container">
             <h2>👷 Voluntarios Registrados</h2>
-            <div class="cards">
-                <article class="card">
-                    <span class="icon">👨‍⚕️</span>
-                    <h3>Dr. Carlos Rodríguez</h3>
-                    <p><strong>Habilidad:</strong> Médico / Primeros auxilios</p>
-                    <p><strong>Disponibilidad:</strong> Turno tarde</p>
-                    <p><strong>Tarea asignada:</strong> Atención en refugio</p>
-                    <span class="badge">Activo</span>
-                </article>
-                <article class="card">
-                    <span class="icon">🧑‍🚒</span>
-                    <h3>Lucía Fernández</h3>
-                    <p><strong>Habilidad:</strong> Rescate / Logística</p>
-                    <p><strong>Disponibilidad:</strong> Turno noche</p>
-                    <p><strong>Tarea asignada:</strong> Coordinación en zona norte</p>
-                    <span class="badge">En terreno</span>
-                </article>
-                <article class="card">
-                    <span class="icon">🧑‍💻</span>
-                    <h3>Jorge Martínez</h3>
-                    <p><strong>Habilidad:</strong> Comunicación / RR.SS.</p>
-                    <p><strong>Disponibilidad:</strong> Full-time</p>
-                    <p><strong>Tarea asignada:</strong> Gestión de llamadas</p>
-                    <span class="badge">Disponible</span>
-                </article>
+            <!-- Misma grilla responsive que Emergencias -->
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <span class="icon">👨‍⚕️</span>
+                            <h3 class="card-title">Dr. Carlos Rodríguez</h3>
+                            <p class="card-text"><strong>Habilidad:</strong> Médico / Primeros auxilios</p>
+                            <p class="card-text"><strong>Disponibilidad:</strong> Turno tarde</p>
+                            <p class="card-text"><strong>Tarea asignada:</strong> Atención en refugio</p>
+                            <span class="badge badge-activo">Activo</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <span class="icon">🧑‍🚒</span>
+                            <h3 class="card-title">Lucía Fernández</h3>
+                            <p class="card-text"><strong>Habilidad:</strong> Rescate / Logística</p>
+                            <p class="card-text"><strong>Disponibilidad:</strong> Turno noche</p>
+                            <p class="card-text"><strong>Tarea asignada:</strong> Coordinación en zona norte</p>
+                            <span class="badge badge-en-terreno">En terreno</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100">
+                        <div class="card-body">
+                            <span class="icon">🧑‍💻</span>
+                            <h3 class="card-title">Jorge Martínez</h3>
+                            <p class="card-text"><strong>Habilidad:</strong> Comunicación / RR.SS.</p>
+                            <p class="card-text"><strong>Disponibilidad:</strong> Full-time</p>
+                            <p class="card-text"><strong>Tarea asignada:</strong> Gestión de llamadas</p>
+                            <span class="badge badge-disponible">Disponible</span>
+                        </div>
+                    </article>
+                </div>
+
             </div>
           </div>
         </section>
@@ -407,22 +441,21 @@
         </div>
     </section>
     </main>
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-        <div class="container">
-            <p><i class="bi bi-shield-exclamation"></i> <strong>GECO | Gestión de Emergencias Comunitarias</strong></p>
-            <p>© 2026 - Proyecto Integrador | Desarrollado para organizaciones comunitarias</p>
-            <div class="footer-links">
-    <a href="#inicio">Inicio</a>
-    <a href="#emergencias">Emergencias</a>
-    <a href="#recursos">Recursos</a>
-    <a href="#refugios">Refugios</a>
-    <a href="#voluntarios">Voluntarios</a>
-    <a href="#solicitudes">Solicitudes</a>
-    <a href="#estadisticas">Estadísticas</a>
-</div>
+        <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container d-flex flex-column align-items-center gap-2">
+            <p class="mb-0"><i class="bi bi-shield-exclamation"></i> <strong>GECO | Gestión de Emergencias Comunitarias</strong></p>
+            <p class="mb-0">© 2026 - Proyecto Integrador | Desarrollado para organizaciones comunitarias</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#inicio" class="text-white text-decoration-none">Inicio</a>
+                <a href="#emergencias" class="text-white text-decoration-none">Emergencias</a>
+                <a href="#recursos" class="text-white text-decoration-none">Recursos</a>
+                <a href="#refugios" class="text-white text-decoration-none">Refugios</a>
+                <a href="#voluntarios" class="text-white text-decoration-none">Voluntarios</a>
+                <a href="#solicitudes" class="text-white text-decoration-none">Solicitudes</a>
+                <a href="#estadisticas" class="text-white text-decoration-none">Estadísticas</a>
+            </div>
         </div>
-        
     </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>

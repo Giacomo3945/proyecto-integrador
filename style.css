@@ -365,7 +365,6 @@ footer p {
 
 /* ============================================================
    NUEVO: FLEXBOX, GRID Y MEDIA QUERIES
-   Agregado por Giacomo - Trabajo Integrador
    ============================================================ */
 
 /* ============================================================
@@ -406,6 +405,7 @@ header nav ul {
 /* ============================================================
    3. FLEXBOX - FOOTER
    ============================================================ */
+/* Reemplazado por Bootstrap - TP3
 footer .container {
     display: flex;
     flex-direction: column;
@@ -419,6 +419,7 @@ footer .container {
     justify-content: center;
     gap: var(--espaciado-xs);
 }
+*/
 
 /* ============================================================
    4. GRID - TARJETAS (CARDS)
@@ -673,4 +674,76 @@ footer .container {
   display: flex;
   align-items: center;
   gap: var(--espaciado-xs);
+}
+
+/* ============================================================
+   BADGES PERSONALIZADOS - TP3
+   ============================================================ */
+
+/* --- Emergencias --- */
+.badge-urgente {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: var(--espaciado-xs);
+}
+
+.badge-en-curso {
+    background-color: var(--color-info);
+    color: var(--color-blanco);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: var(--espaciado-xs);
+}
+
+.badge-finalizado {
+    background-color: var(--color-exito);
+    color: var(--color-blanco);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: var(--espaciado-xs);
+}
+
+/* --- Voluntarios --- */
+.badge-activo {
+    background-color: var(--color-exito);
+    color: var(--color-blanco);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: var(--espaciado-xs);
+}
+
+.badge-en-terreno {
+    background-color: var(--color-alerta);
+    color: var(--color-blanco);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: var(--espaciado-xs);
+}
+
+.badge-disponible {
+    background-color: var(--color-info);
+    color: var(--color-blanco);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: var(--espaciado-xs);
 }
