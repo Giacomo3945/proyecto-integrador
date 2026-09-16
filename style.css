@@ -663,72 +663,42 @@ footer .container {
 
 /* ============================================================
    BADGES PERSONALIZADOS - TP3
+   Solo definen el color; el resto lo aporta la clase .badge
    ============================================================ */
 
 /* --- Emergencias --- */
 .badge-urgente {
     background-color: var(--color-primario);
-    color: var(--color-blanco);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: var(--espaciado-xs);
 }
 
 .badge-en-curso {
     background-color: var(--color-info);
-    color: var(--color-blanco);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: var(--espaciado-xs);
 }
 
 .badge-finalizado {
     background-color: var(--color-exito);
-    color: var(--color-blanco);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: var(--espaciado-xs);
 }
 
 /* --- Voluntarios --- */
 .badge-activo {
     background-color: var(--color-exito);
-    color: var(--color-blanco);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: var(--espaciado-xs);
 }
 
 .badge-en-terreno {
     background-color: var(--color-alerta);
-    color: var(--color-blanco);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: var(--espaciado-xs);
 }
 
 .badge-disponible {
     background-color: var(--color-info);
-    color: var(--color-blanco);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: var(--espaciado-xs);
+}
+
+/* Alinea los badges al pie de cada tarjeta */
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-body .badge {
+  margin-top: auto;
+  align-self: flex-start;
 }
