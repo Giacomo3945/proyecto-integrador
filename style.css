@@ -388,6 +388,8 @@ header nav ul {
 /* ============================================================
    2. FLEXBOX - ESTADÍSTICAS
    ============================================================ */
+
+/* Reemplazado por Bootstrap - TP3
 .estadisticas {
     display: flex;
     flex-wrap: wrap;
@@ -399,6 +401,7 @@ header nav ul {
     flex: 1 1 120px;
     max-width: 160px;
 }
+*/
 
 /* ============================================================
    3. FLEXBOX - FOOTER
