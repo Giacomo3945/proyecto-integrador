@@ -734,3 +734,65 @@ footer .container {
   font-size: 1.1rem;
   margin-right: 0.25rem;
 }
+
+/* ============================================================
+   TP4 - Filtro de Emergencias y Botón Volver Arriba
+   ============================================================ */
+
+/* --- Botones de filtro --- */
+.btn-filtro {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radio-borde);
+    transition: all 0.3s ease;
+}
+
+.btn-filtro.active {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border-color: var(--color-primario);
+}
+
+/* --- Botón Volver Arriba (estilo barra centrada) --- */
+.btn-volver-arriba {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: 2px solid #333333;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    right: auto;
+    transform: none;
+    z-index: 1000;
+}
+
+.btn-volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-volver-arriba:hover {
+    background-color: #922b21;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .btn-volver-arriba {
+      left: 15px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        bottom: 20px;
+    }
+}

@@ -87,3 +87,73 @@ formSolicitud.addEventListener("submit", function (evento) {
     // Limpiamos el formulario
     formSolicitud.reset();
 });
+
+
+
+/*  Filtro de emergencias por gravedad - Giacomo */
+
+// 1. Seleccionamos todos los botones de filtro
+const botonesFiltro = document.querySelectorAll(".btn-filtro");
+
+// 2. Seleccionamos todas las tarjetas de emergencia
+const tarjetasEmergencia = document.querySelectorAll("#emergencias .card");
+
+// 3. Recorremos cada botón y le agregamos un evento "click"
+botonesFiltro.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        
+        // 3.1. Quitamos la clase "active" de TODOS los botones
+        botonesFiltro.forEach(function (b) {
+            b.classList.remove("active");
+        });
+        
+        // 3.2. Agregamos la clase "active" SOLO al botón clickeado
+        boton.classList.add("active");
+        
+        // 3.3. Obtenemos la gravedad seleccionada del atributo data-gravedad
+        const gravedadSeleccionada = boton.getAttribute("data-gravedad");
+        
+        // 3.4. Recorremos cada tarjeta y decidimos si mostrarla u ocultarla
+        tarjetasEmergencia.forEach(function (tarjeta) {
+            const gravedadTarjeta = tarjeta.getAttribute("data-gravedad");
+            
+            // Si el filtro es "Todas" o la gravedad coincide, mostramos la tarjeta
+            if (gravedadSeleccionada === "Todas" || gravedadTarjeta === gravedadSeleccionada) {
+                tarjeta.parentElement.style.display = ""; // Mostrar (el padre es el <div class="col">)
+            } else {
+                tarjeta.parentElement.style.display = "none"; // Ocultar
+            }
+        });
+    });
+});
+
+
+/* Botón volver arriba - Giacomo */
+
+// 1. Seleccionamos el botón
+const btnVolverArriba = document.getElementById("btn-volver-arriba");
+
+// 2. Escuchamos el evento "scroll" de la ventana
+// Buscamos la sección de Refugios
+const seccionRefugios = document.getElementById("refugios");
+
+window.addEventListener("scroll", function () {
+    // Calculamos la posición de la sección de Refugios
+    const posicionRefugios = seccionRefugios.offsetTop;
+    
+    // Si el usuario pasó la sección de Refugios, mostramos el botón
+    if (window.scrollY >= posicionRefugios - 200) {
+        btnVolverArriba.classList.add("visible");
+    } else {
+        btnVolverArriba.classList.remove("visible");
+    }
+});
+
+// 3. Escuchamos el clic en el botón para volver arriba
+btnVolverArriba.addEventListener("click", function () {
+    // 3.1. Subimos suavemente al inicio de la página
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Animación suave
+    });
+});
