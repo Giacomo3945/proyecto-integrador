@@ -275,7 +275,7 @@
                 <!-- Formulario de solicitud -->
                 <div class="formulario">
                     <h3 class="titulo-form"><i class="bi bi-pencil-square"></i> Reportar nueva solicitud</h3>
-                                        <form>
+                    <form id="form-solicitud">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="tipo-solicitud" class="form-label">Tipo de solicitud</label>
@@ -312,6 +312,9 @@
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-alerta btn-lg">Enviar solicitud</button>
+                            </div>
+                             <div class="col-12">
+                                <div id="mensaje-solicitud"></div>
                             </div>
                         </div>
                     </form>
