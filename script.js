@@ -157,3 +157,33 @@ btnVolverArriba.addEventListener("click", function () {
         behavior: "smooth" // Animación suave
     });
 });
+
+
+/* BUSCADOR DE RECURSOS - Conty */
+
+// 1. Buscamos el input de búsqueda
+const buscadorRecursos = document.getElementById("buscador-recursos");
+
+// 2. Buscamos todas las tarjetas de la sección de Recursos
+const tarjetasRecursos = document.querySelectorAll("#recursos .card");
+
+// 3. Escuchamos el evento "input" (se dispara cada vez que se escribe algo)
+buscadorRecursos.addEventListener("input", function () {
+
+    // 3.1. Guardamos el texto escrito, en minúsculas (para que no importe mayúscula/minúscula)
+    const textoBuscado = buscadorRecursos.value.toLowerCase();
+
+    // 3.2. Recorremos cada tarjeta
+    tarjetasRecursos.forEach(function (tarjeta) {
+
+        // Buscamos el título dentro de la tarjeta
+        const titulo = tarjeta.querySelector(".card-title").textContent.toLowerCase();
+
+        // Si el título incluye el texto buscado, mostramos la tarjeta; si no, la ocultamos
+        if (titulo.includes(textoBuscado)) {
+            tarjeta.parentElement.style.display = ""; // Mostrar (el padre es el <div class="col">)
+        } else {
+            tarjeta.parentElement.style.display = "none"; // Ocultar
+        }
+    });
+});
