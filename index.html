@@ -65,6 +65,13 @@
         <section id="emergencias" class="section">
             <div class="container">
                 <h2><i class="bi bi-exclamation-triangle"></i> Emergencias Activas</h2>
+                                <!-- Botones de filtro por gravedad -->
+                <div class="d-flex flex-wrap gap-2 mb-3" id="filtros-emergencia">
+                    <button class="btn btn-alerta btn-filtro active" data-gravedad="Todas">Todas</button>
+                    <button class="btn btn-outline-danger btn-filtro" data-gravedad="Alta">Alta</button>
+                    <button class="btn btn-outline-warning btn-filtro" data-gravedad="Media">Media</button>
+                    <button class="btn btn-outline-success btn-filtro" data-gravedad="Baja">Baja</button>
+                </div>
                 <!-- Grilla responsive: 1 col en celular, 3 cols en tablet/PC -->
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     
