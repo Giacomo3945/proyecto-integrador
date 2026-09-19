@@ -187,3 +187,77 @@ buscadorRecursos.addEventListener("input", function () {
         }
     });
 });
+
+
+/* ANIMACIÓN DE CONTEO EN ESTADÍSTICAS - Conty */
+
+// Buscamos todos los elementos que tienen el número a animar
+const numerosEstadisticas = document.querySelectorAll("#estadisticas .numero");
+
+// Buscamos la sección completa, para deectar cuando entra en pantalla
+const seccionEstadisticas = document.getElementById("estadisticas");
+
+// Anima un número específico desde 0 hasta su valor final
+function animarNumero(elemento) {
+
+    // Guardamos el texto original completo (ej: "85%")
+    const textoOriginal = elemento.textContent;
+
+    // Sacamos solo la parte numérica (ej: de "85%" saca 85)
+    const valorFinal = parseInt(textoOriginal);
+
+    // Guardamos lo que acompaña al número (ej: "%"). Si no hay nada, queda ""
+    const sufijo = textoOriginal.replace(/[0-9]/g, "");
+
+    // Mostramos el 0 inicial
+    elemento.textContent = "0" + sufijo;
+
+    // Pausa antes de empezar la animación 
+    setTimeout(function () {
+
+        let valorActual = 0;
+
+        // Cantidad de pasos para que todos tengan la misma fluidez
+        const pasos = 90;
+
+        // Incremento por paso, calculado segun el valor final
+        const incremento = valorFinal / pasos;
+
+        // Actualizamos el numero progresivamente hasta alcanzar el valor final
+        const intervalo = setInterval(function () {
+            valorActual += incremento;
+
+            if (valorActual >= valorFinal) {
+                valorActual = valorFinal;
+                clearInterval(intervalo);
+            }
+
+            // Se redondea al entero más cercano, para mostrar un número prolijo (sin decimales)
+            elemento.textContent = Math.round(valorActual) + sufijo;
+        }, 18);
+
+    }, 700);
+}
+
+// Detectamos cuándo la sección estadísticas entra en pantalla (observer)
+const observador = new IntersectionObserver(function (entradas) {
+
+    // "entradas" es una lista de los elementos observados (acá solo tenemos 1: la sección)
+    entradas.forEach(function (entrada) {
+
+        // isIntersecting es true cuando el elemento entró en pantalla
+        if (entrada.isIntersecting) {
+
+            // Animamos cada número
+            numerosEstadisticas.forEach(function (numero) {
+                animarNumero(numero);
+            });
+
+            //Dejamos de observar para que la animación no se repita
+            observador.unobserve(seccionEstadisticas);
+        }
+    });
+});
+
+// Se activa la observación de la sección de estadísticas
+observador.observe(seccionEstadisticas);
