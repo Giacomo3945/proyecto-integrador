@@ -157,3 +157,107 @@ btnVolverArriba.addEventListener("click", function () {
         behavior: "smooth" // Animación suave
     });
 });
+
+
+/* BUSCADOR DE RECURSOS - Conty */
+
+// 1. Buscamos el input de búsqueda
+const buscadorRecursos = document.getElementById("buscador-recursos");
+
+// 2. Buscamos todas las tarjetas de la sección de Recursos
+const tarjetasRecursos = document.querySelectorAll("#recursos .card");
+
+// 3. Escuchamos el evento "input" (se dispara cada vez que se escribe algo)
+buscadorRecursos.addEventListener("input", function () {
+
+    // 3.1. Guardamos el texto escrito, en minúsculas (para que no importe mayúscula/minúscula)
+    const textoBuscado = buscadorRecursos.value.toLowerCase();
+
+    // 3.2. Recorremos cada tarjeta
+    tarjetasRecursos.forEach(function (tarjeta) {
+
+        // Buscamos el título dentro de la tarjeta
+        const titulo = tarjeta.querySelector(".card-title").textContent.toLowerCase();
+
+        // Si el título incluye el texto buscado, mostramos la tarjeta; si no, la ocultamos
+        if (titulo.includes(textoBuscado)) {
+            tarjeta.parentElement.style.display = ""; // Mostrar (el padre es el <div class="col">)
+        } else {
+            tarjeta.parentElement.style.display = "none"; // Ocultar
+        }
+    });
+});
+
+
+/* ANIMACIÓN DE CONTEO EN ESTADÍSTICAS - Conty */
+
+// Buscamos todos los elementos que tienen el número a animar
+const numerosEstadisticas = document.querySelectorAll("#estadisticas .numero");
+
+// Buscamos la sección completa, para deectar cuando entra en pantalla
+const seccionEstadisticas = document.getElementById("estadisticas");
+
+// Anima un número específico desde 0 hasta su valor final
+function animarNumero(elemento) {
+
+    // Guardamos el texto original completo (ej: "85%")
+    const textoOriginal = elemento.textContent;
+
+    // Sacamos solo la parte numérica (ej: de "85%" saca 85)
+    const valorFinal = parseInt(textoOriginal);
+
+    // Guardamos lo que acompaña al número (ej: "%"). Si no hay nada, queda ""
+    const sufijo = textoOriginal.replace(/[0-9]/g, "");
+
+    // Mostramos el 0 inicial
+    elemento.textContent = "0" + sufijo;
+
+    // Pausa antes de empezar la animación 
+    setTimeout(function () {
+
+        let valorActual = 0;
+
+        // Cantidad de pasos para que todos tengan la misma fluidez
+        const pasos = 90;
+
+        // Incremento por paso, calculado segun el valor final
+        const incremento = valorFinal / pasos;
+
+        // Actualizamos el numero progresivamente hasta alcanzar el valor final
+        const intervalo = setInterval(function () {
+            valorActual += incremento;
+
+            if (valorActual >= valorFinal) {
+                valorActual = valorFinal;
+                clearInterval(intervalo);
+            }
+
+            // Se redondea al entero más cercano, para mostrar un número prolijo (sin decimales)
+            elemento.textContent = Math.round(valorActual) + sufijo;
+        }, 18);
+
+    }, 700);
+}
+
+// Detectamos cuándo la sección estadísticas entra en pantalla (observer)
+const observador = new IntersectionObserver(function (entradas) {
+
+    // "entradas" es una lista de los elementos observados (acá solo tenemos 1: la sección)
+    entradas.forEach(function (entrada) {
+
+        // isIntersecting es true cuando el elemento entró en pantalla
+        if (entrada.isIntersecting) {
+
+            // Animamos cada número
+            numerosEstadisticas.forEach(function (numero) {
+                animarNumero(numero);
+            });
+
+            //Dejamos de observar para que la animación no se repita
+            observador.unobserve(seccionEstadisticas);
+        }
+    });
+});
+
+// Se activa la observación de la sección de estadísticas
+observador.observe(seccionEstadisticas);
